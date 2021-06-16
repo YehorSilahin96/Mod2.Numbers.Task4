@@ -4,6 +4,7 @@ import java.util.HashSet;
 
 public class Main {
 
+    //output
     public static void main(String[] args) {
         System.out.println("First 10 Happy numbers:");
         for (long num = 1, count = 0; count < 8; num++) {
@@ -13,7 +14,8 @@ public class Main {
             }
         }
     }
-    
+
+    //getting result
     public static boolean happy_num(long num){
         long m = 0;
         int digit = 0;
