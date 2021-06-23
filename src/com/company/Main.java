@@ -4,31 +4,29 @@ import java.util.HashSet;
 
 public class Main {
 
-    //output
     public static void main(String[] args) {
         System.out.println("First 10 Happy numbers:");
-        for (long num = 1, count = 0; count < 8; num++) {
-            if (happyNumber(num)) {
-                System.out.println(num);
+        for (long number = 1, count = 0; count < 8; number++) {
+            if (happyNumber(number)) {
+                System.out.println(number);
                 count++;
             }
         }
     }
 
-    //getting result
-    public static boolean happyNumber(long num){
-        long newnum = 0;
+    public static boolean happyNumber(long number){
+        long newNumber = 0;
         int digit = 0;
-        HashSet<Long> cycle = new HashSet<Long>();
-        while(num != 1 && cycle.add(num)){
-            newnum = 0;
-            while(num > 0){
-                digit = (int)(num % 10);
-                newnum += digit*digit;
-                num /= 10;
+        HashSet<Long> setForHappy = new HashSet<Long>();
+        while(number != 1 && setForHappy.add(number)){
+            newNumber = 0;
+            while(number > 0){
+                digit = (int)(number % 10);
+                newNumber += digit*digit;
+                number /= 10;
             }
-            num = newnum;
+            number = newNumber;
         }
-        return num == 1;
+        return number == 1;
     }
 }
