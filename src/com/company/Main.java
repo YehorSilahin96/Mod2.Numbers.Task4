@@ -6,27 +6,27 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("First 10 Happy numbers:");
-        for (long num = 1, count = 0; count < 8; num++) {
-            if (happy_num(num)) {
-                System.out.println(num);
+        for (long number = 1, count = 0; count < 8; number++) {
+            if (happyNumber(number)) {
+                System.out.println(number);
                 count++;
             }
         }
     }
-    
-    public static boolean happy_num(long num){
-        long m = 0;
+
+    public static boolean happyNumber(long number){
+        long newNumber = 0;
         int digit = 0;
-        HashSet<Long> cycle = new HashSet<Long>();
-        while(num != 1 && cycle.add(num)){
-            m = 0;
-            while(num > 0){
-                digit = (int)(num % 10);
-                m += digit*digit;
-                num /= 10;
+        HashSet<Long> setForHappy = new HashSet<Long>();
+        while(number != 1 && setForHappy.add(number)){
+            newNumber = 0;
+            while(number > 0){
+                digit = (int)(number % 10);
+                newNumber += digit*digit;
+                number /= 10;
             }
-            num = m;
+            number = newNumber;
         }
-        return num == 1;
+        return number == 1;
     }
 }
